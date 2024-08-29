@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Header from "./components/header";
+
 import Footer from "./components/footer";
 import HeroSection from "./components/HeroSection";
 import Home from "./pages/home";
