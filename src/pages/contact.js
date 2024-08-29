@@ -4,136 +4,98 @@ import "./contact.css";
 const Contact = () => {
   return (
     <div className="contact-container">
-      <div className="contact-info">
-        <h2>Contact Information</h2>
+      <div className="contact-header">
+        <h1>Contact Us</h1>
+        <p className="contact-subheader">
+          We're here to help with any inquiries or support you need.
+        </p>
+      </div>
 
-        <div className="info-box">
-          <div className="icon">📞</div>
-          <div>
-            <h3>General Contact</h3>
-            <p>Phone: 91-7428693710 – 17 (8 Lines)</p>
-            <p>Extensions: Reception – 09 & 214</p>
-          </div>
+      <div className="contact-grid">
+        <div className="contact-card">
+          <h3>General Contact</h3>
+          <p>
+            📞 Phone: 91-7428693710 – 17 (8 Lines) Extensions: Reception – 09 &
+            214
+          </p>
         </div>
 
-        <div className="info-box">
-          <div className="icon">🎟️</div>
-          <div>
-            <h3>Booking of Museum Visit & Educational Queries</h3>
-            <p>
-              Contact: Shri Kailash Chandra or Shri Bharat Bhushan Srivastava
-            </p>
-            <p>
-              Email:{" "}
-              <a href="mailto:educationnscdelhi@gmail.com">
-                educationnscdelhi@gmail.com
-              </a>
-            </p>
-          </div>
+        <div className="contact-card">
+          <h3>Booking & Educational Queries</h3>
+          <p>Contact: Shri Kailash Chandra or Shri Bharat Bhushan Srivastava</p>
+          <p>
+            📧 Email:{" "}
+            <a href="mailto:educationnscdelhi@gmail.com">
+              educationnscdelhi@gmail.com
+            </a>
+          </p>
         </div>
 
-        <div className="info-box">
-          <div className="icon">📝</div>
-          <div>
-            <h3>Administrative & General Queries</h3>
-            <p>Contact: Dy Controller of Administration</p>
-            <p>
-              Email:{" "}
-              <a href="mailto:admn.nscd@gmail.com">admn.nscd@gmail.com</a>
-            </p>
-          </div>
+        <div className="contact-card">
+          <h3>Administrative Queries</h3>
+          <p>Contact: Dy Controller of Administration</p>
+          <p>
+            📧 Email:{" "}
+            <a href="mailto:admn.nscd@gmail.com">admn.nscd@gmail.com</a>
+          </p>
         </div>
 
-        <div className="info-box">
-          <div className="icon">💰</div>
-          <div>
-            <h3>Payment, Finance, and Accounts Queries</h3>
-            <p>Contact: Dy Controller of Finance & Accounts</p>
-            <p>
-              Email:{" "}
-              <a href="mailto:financenscd@gmail.com">financenscd@gmail.com</a>
-            </p>
-          </div>
+        <div className="contact-card">
+          <h3>Finance & Accounts Queries</h3>
+          <p>Contact: Dy Controller of Finance & Accounts</p>
+          <p>
+            📧 Email:{" "}
+            <a href="mailto:financenscd@gmail.com">financenscd@gmail.com</a>
+          </p>
         </div>
 
-        <div className="info-box">
-          <div className="icon">🛒</div>
-          <div>
-            <h3>Purchase Queries</h3>
-            <p>Contact: Section Officer</p>
-            <p>
-              Email:{" "}
-              <a href="mailto:nscdelhi10@gmail.com">nscdelhi10@gmail.com</a>
-            </p>
-          </div>
+        <div className="contact-card">
+          <h3>Purchase Queries</h3>
+          <p>Contact: Section Officer</p>
+          <p>
+            📧 Email:{" "}
+            <a href="mailto:nscdelhi10@gmail.com">nscdelhi10@gmail.com</a>
+          </p>
         </div>
 
-        <div className="info-box">
-          <div className="icon">📊</div>
-          <div>
-            <h3>Project Related Proposal / Query</h3>
-            <p>Contact: Director</p>
-            <p>
-              Email: <a href="mailto:nscdl01@gmail.com">nscdl01@gmail.com</a>
-            </p>
-          </div>
+        <div className="contact-card">
+          <h3>Project Proposals</h3>
+          <p>Contact: Director</p>
+          <p>
+            📧 Email: <a href="mailto:nscdl01@gmail.com">nscdl01@gmail.com</a>
+          </p>
         </div>
       </div>
 
       <div className="contact-form">
-        <h2>Get in Touch</h2>
+        <h3>Send Us a Message</h3>
         <form>
           <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Your Name"
-              required
-            />
+            <input type="text" name="name" placeholder=" " required />
+            <label>Your Name</label>
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
+            <input type="email" name="email" placeholder=" " required />
+            <label>Your Email</label>
           </div>
           <div className="form-group">
-            <label htmlFor="phone">Phone Number</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Your Phone Number"
-            />
+            <input type="tel" name="phone" placeholder=" " />
+            <label>Your Phone Number</label>
           </div>
           <div className="form-group">
-            <label htmlFor="subject">Subject</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="Subject"
-              required
-            />
+            <input type="text" name="subject" placeholder=" " required />
+            <label>Subject</label>
           </div>
           <div className="form-group">
-            <label htmlFor="message">Message</label>
             <textarea
-              id="message"
               name="message"
-              placeholder="Your Message"
+              placeholder=" "
+              rows="5"
               required
             ></textarea>
+            <label>Your Message</label>
           </div>
-          <div className="form-group">
-            <button type="submit">Send Message</button>
-          </div>
+          <button type="submit">Send Message</button>
         </form>
       </div>
     </div>

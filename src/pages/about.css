@@ -1,56 +1,89 @@
-/* about.css */
-
 .about-container {
-  padding: 30px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.8;
-  color: #444;
-  background-color: #f4f4f9;
-  border-radius: 12px;
-  max-width: 850px;
-  margin: 20px auto;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border: 1px solid #ddd;
   padding: 40px;
+  font-family: "Lato", sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
 }
 
-.about-container h1 {
-  color: #1e88e5; /* Slightly different shade of blue */
-  margin-bottom: 24px;
+.about-header {
   text-align: center;
-  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  color: #004b6c;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+}
+
+.about-header .about-intro {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-image {
+  max-width: 40%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-timings,
+.about-getting-here,
+.about-why-visit,
+.about-contact,
+.about-social-media {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #004b6c;
+}
+
+.about-timings h2,
+.about-getting-here h2,
+.about-why-visit h2,
+.about-contact h2,
+.about-social-media h2 {
+  font-size: 1.6rem;
+  color: #004b6c;
+  margin-bottom: 10px;
+}
+
+.about-contact a,
+.about-social-media a {
+  color: #004b6c;
+  text-decoration: none;
   font-weight: 600;
 }
 
-.about-container h2 {
-  color: #1e70bf;
-  margin-top: 30px;
-  margin-bottom: 12px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 8px;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.about-container p {
-  margin-bottom: 20px;
-  text-align: justify;
-  font-size: 1.1rem;
-}
-
-.about-container a {
-  color: #1e88e5;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.about-container a:hover {
+.about-contact a:hover,
+.about-social-media a:hover {
   text-decoration: underline;
-  color: #1565c0;
 }
 
-.about-container blockquote {
-  border-left: 4px solid #1e88e5;
+.about-quote {
+  border-left: 4px solid #004b6c;
   padding-left: 20px;
   margin: 20px 0;
   font-style: italic;
@@ -58,4 +91,6 @@
   background-color: #f9f9f9;
   padding: 15px;
   border-radius: 8px;
+  text-align: center;
+  font-size: 1.2rem;
 }

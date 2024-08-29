@@ -1,0 +1,70 @@
+.exhibitions-container {
+  padding: 40px;
+  font-family: "Lato", sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.exhibitions-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.exhibitions-header h1 {
+  font-size: 3rem;
+  color: #004b6c;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+}
+
+.exhibitions-header .exhibitions-intro {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.exhibitions-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.exhibition-item {
+  display: flex;
+  gap: 20px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #004b6c;
+}
+
+.exhibition-image {
+  max-width: 40%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exhibition-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.exhibition-info h2 {
+  font-size: 1.6rem;
+  color: #004b6c;
+  margin-bottom: 10px;
+}
+
+.exhibition-info p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
