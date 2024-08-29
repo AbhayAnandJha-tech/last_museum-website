@@ -1,5 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
 .App {
   text-align: center;
+  background-color: #f4f4f9;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-logo {
@@ -14,25 +27,87 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #1976d2;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(12px + 2vmin);
   color: white;
+  padding: 20px;
+  text-align: center;
 }
 
 .App-link {
   color: #61dafb;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
+.App-link:hover {
+  color: #21a1f1;
+}
+
+/* Keyframes for logo animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Hero section styles */
+.HeroSection {
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(rgba(25, 118, 210, 0.8), rgba(25, 118, 210, 0.8)),
+    url("https://qph.cf2.quoracdn.net/main-qimg-190bef3af6e815401e25f6a97c33df8b-lq")
+      center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+}
+
+.HeroSection h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.HeroSection p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Footer styles */
+.Footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .HeroSection {
+    height: 60vh;
+    padding: 10px;
+  }
+
+  .HeroSection h1 {
+    font-size: 2.5rem;
+  }
+
+  .HeroSection p {
+    font-size: 1.2rem;
   }
 }

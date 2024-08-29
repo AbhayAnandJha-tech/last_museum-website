@@ -15,8 +15,10 @@ const Contact = () => {
         <div className="contact-card">
           <h3>General Contact</h3>
           <p>
-            📞 Phone: 91-7428693710 – 17 (8 Lines) Extensions: Reception – 09 &
-            214
+            <span role="img" aria-label="phone">
+              📞
+            </span>{" "}
+            Phone: 91-7428693710 – 17 (8 Lines) Extensions: Reception – 09 & 214
           </p>
         </div>
 
@@ -24,7 +26,10 @@ const Contact = () => {
           <h3>Booking & Educational Queries</h3>
           <p>Contact: Shri Kailash Chandra or Shri Bharat Bhushan Srivastava</p>
           <p>
-            📧 Email:{" "}
+            <span role="img" aria-label="email">
+              📧
+            </span>{" "}
+            Email:{" "}
             <a href="mailto:educationnscdelhi@gmail.com">
               educationnscdelhi@gmail.com
             </a>
@@ -35,8 +40,10 @@ const Contact = () => {
           <h3>Administrative Queries</h3>
           <p>Contact: Dy Controller of Administration</p>
           <p>
-            📧 Email:{" "}
-            <a href="mailto:admn.nscd@gmail.com">admn.nscd@gmail.com</a>
+            <span role="img" aria-label="email">
+              📧
+            </span>{" "}
+            Email: <a href="mailto:admn.nscd@gmail.com">admn.nscd@gmail.com</a>
           </p>
         </div>
 
@@ -44,7 +51,10 @@ const Contact = () => {
           <h3>Finance & Accounts Queries</h3>
           <p>Contact: Dy Controller of Finance & Accounts</p>
           <p>
-            📧 Email:{" "}
+            <span role="img" aria-label="email">
+              📧
+            </span>{" "}
+            Email:{" "}
             <a href="mailto:financenscd@gmail.com">financenscd@gmail.com</a>
           </p>
         </div>
@@ -53,7 +63,10 @@ const Contact = () => {
           <h3>Purchase Queries</h3>
           <p>Contact: Section Officer</p>
           <p>
-            📧 Email:{" "}
+            <span role="img" aria-label="email">
+              📧
+            </span>{" "}
+            Email:{" "}
             <a href="mailto:nscdelhi10@gmail.com">nscdelhi10@gmail.com</a>
           </p>
         </div>
@@ -62,7 +75,10 @@ const Contact = () => {
           <h3>Project Proposals</h3>
           <p>Contact: Director</p>
           <p>
-            📧 Email: <a href="mailto:nscdl01@gmail.com">nscdl01@gmail.com</a>
+            <span role="img" aria-label="email">
+              📧
+            </span>{" "}
+            Email: <a href="mailto:nscdl01@gmail.com">nscdl01@gmail.com</a>
           </p>
         </div>
       </div>

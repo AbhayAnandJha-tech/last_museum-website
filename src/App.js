@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import HeroSection from "./components/HeroSection";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Exhibitions from "./pages/exhibitions";
@@ -11,27 +12,28 @@ import Tickets from "./pages/tickets";
 import Visit from "./pages/visit";
 import Contact from "./pages/contact";
 import Chatbot from "./components/chatbot";
+import "./App.css";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1976d2",
+      main: "#1976d2", // Primary color
     },
     secondary: {
-      main: "#dc004e",
+      main: "#dc004e", // Secondary color
     },
   },
 });
 
 function App() {
-  // Define the content to be passed as props
   const aboutContent = "Information about our science center.";
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Header />
+        <HeroSection />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About content={aboutContent} />} />
@@ -40,7 +42,9 @@ function App() {
           <Route path="/visit" element={<Visit />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+
         <Chatbot />
+
         <Footer />
       </Router>
     </ThemeProvider>
