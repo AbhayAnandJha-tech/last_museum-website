@@ -1,20 +1,155 @@
 import React, { useState } from "react";
-import { Paper, TextField, Button, Typography } from "@material-ui/core";
+import {
+  Paper,
+  TextField,
+  Button,
+  Typography,
+  CircularProgress,
+  IconButton,
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import MinimizeIcon from "@material-ui/icons/Remove";
+import ScienceIcon from "@material-ui/icons/EmojiObjects"; // For minimized state icon
+import PersonIcon from "@material-ui/icons/Person"; // Scientist icon
+
+const useStyles = makeStyles((theme) => ({
+  chatbotContainer: {
+    position: "fixed",
+    bottom: 20,
+    right: 20,
+    width: 350,
+    padding: 20,
+    borderRadius: 15,
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    backgroundColor: "#ffffff",
+    [theme.breakpoints.down("xs")]: {
+      width: "90%",
+      bottom: 10,
+      right: 10,
+    },
+  },
+  minimizedChatbot: {
+    position: "fixed",
+    bottom: 20,
+    right: 20,
+    width: 60,
+    height: 60,
+    borderRadius: "50%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    backgroundColor: "#1976d2",
+    color: "#fff",
+    cursor: "pointer",
+    [theme.breakpoints.down("xs")]: {
+      bottom: 10,
+      right: 10,
+    },
+  },
+  chatHeader: {
+    textAlign: "center",
+    marginBottom: 15,
+    color: "#1976d2",
+    fontWeight: "bold",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    background: "linear-gradient(to right, #1976d2, #42a5f5)",
+    padding: "5px 10px",
+    borderRadius: "10px",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+  },
+  headerText: {
+    display: "flex",
+    alignItems: "center",
+    fontWeight: 600,
+    fontSize: "1.1rem",
+  },
+  chatArea: {
+    height: 300,
+    overflowY: "auto",
+    marginBottom: 20,
+    padding: "10px 0",
+    borderTop: "1px solid #e0e0e0",
+    borderBottom: "1px solid #e0e0e0",
+  },
+  messageContainer: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+  },
+  userMessage: {
+    alignSelf: "flex-end",
+    backgroundColor: "#e3f2fd",
+    color: "#333",
+    padding: 10,
+    borderRadius: 10,
+    margin: 5,
+    maxWidth: "80%",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+  },
+  botMessage: {
+    backgroundColor: "#f5f5f5",
+    color: "#333",
+    padding: 10,
+    borderRadius: 10,
+    margin: 5,
+    maxWidth: "80%",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+  },
+  inputArea: {
+    display: "flex",
+    alignItems: "center",
+  },
+  inputField: {
+    flexGrow: 1,
+    marginRight: theme.spacing(1),
+  },
+  sendButton: {
+    backgroundColor: "#1976d2",
+    color: "#fff",
+    "&:hover": {
+      backgroundColor: "#155fa0",
+    },
+  },
+  typingIndicator: {
+    display: "flex",
+    alignItems: "center",
+    fontStyle: "italic",
+    color: "#888",
+    padding: 10,
+  },
+}));
 
 function Chatbot() {
+  const classes = useStyles();
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [isBotTyping, setIsBotTyping] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
 
   const handleSend = () => {
     if (input.trim()) {
       setMessages([...messages, { text: input, user: true }]);
       setInput("");
-      // Simulate bot response
+      setIsBotTyping(true);
+
       setTimeout(() => {
+        setIsBotTyping(false);
+        const botResponses = [
+          "Thank you for your message. How can I assist you with our museum today?",
+          "Our museum features a variety of exhibitions, including interactive displays and special science events.",
+          "We are open from 10 AM to 6 PM from Monday to Saturday. On Sundays, we open from 11 AM to 5 PM.",
+          "To book tickets, please visit our ticket booking section or ask here for guidance.",
+          "Become a member to enjoy exclusive benefits, discounts, and special event invitations.",
+        ];
+        const randomResponse =
+          botResponses[Math.floor(Math.random() * botResponses.length)];
         setMessages((msgs) => [
           ...msgs,
           {
-            text: "Thank you for your message. How can I assist you with our museum today?",
+            text: randomResponse,
             user: false,
           },
         ]);
@@ -22,50 +157,67 @@ function Chatbot() {
     }
   };
 
-  return (
-    <Paper
-      style={{
-        position: "fixed",
-        bottom: 20,
-        right: 20,
-        width: 300,
-        padding: 20,
-      }}
-    >
-      <Typography variant="h6">Chat with us</Typography>
-      <div style={{ height: 300, overflowY: "auto", marginBottom: 20 }}>
+  const toggleMinimize = () => {
+    setIsMinimized(!isMinimized);
+  };
+
+  return isMinimized ? (
+    <div className={classes.minimizedChatbot} onClick={toggleMinimize}>
+      <ScienceIcon style={{ fontSize: 40 }} />{" "}
+    </div>
+  ) : (
+    <Paper className={classes.chatbotContainer}>
+      <div className={classes.chatHeader}>
+        <Typography className={classes.headerText}>
+          <PersonIcon style={{ marginRight: 8 }} />{" "}
+          {/* Scientist cartoon icon */}
+          Chat with us
+        </Typography>
+        <IconButton onClick={toggleMinimize} size="small">
+          <MinimizeIcon />
+        </IconButton>
+      </div>
+      <div className={classes.chatArea}>
         {messages.map((message, index) => (
           <div
             key={index}
-            style={{ textAlign: message.user ? "right" : "left" }}
+            className={classes.messageContainer}
+            style={{ alignItems: message.user ? "flex-end" : "flex-start" }}
           >
             <Paper
-              style={{
-                display: "inline-block",
-                padding: 10,
-                margin: 5,
-                backgroundColor: message.user ? "#e3f2fd" : "#f5f5f5",
-              }}
+              className={
+                message.user ? classes.userMessage : classes.botMessage
+              }
             >
               {message.text}
             </Paper>
           </div>
         ))}
+        {isBotTyping && (
+          <div className={classes.typingIndicator}>
+            <CircularProgress size={16} style={{ marginRight: 8 }} />
+            Bot is typing...
+          </div>
+        )}
       </div>
-      <TextField
-        fullWidth
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        onKeyPress={(e) => e.key === "Enter" && handleSend()}
-      />
-      <Button
-        onClick={handleSend}
-        color="primary"
-        variant="contained"
-        style={{ marginTop: 10 }}
-      >
-        Send
-      </Button>
+      <div className={classes.inputArea}>
+        <TextField
+          className={classes.inputField}
+          variant="outlined"
+          size="small"
+          placeholder="Type your message..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyPress={(e) => e.key === "Enter" && handleSend()}
+        />
+        <Button
+          onClick={handleSend}
+          variant="contained"
+          className={classes.sendButton}
+        >
+          Send
+        </Button>
+      </div>
     </Paper>
   );
 }

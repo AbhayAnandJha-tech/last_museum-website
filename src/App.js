@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import Footer from "./components/footer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -11,16 +12,16 @@ import Exhibitions from "./pages/exhibitions";
 import Tickets from "./pages/tickets";
 import Visit from "./pages/visit";
 import Contact from "./pages/contact";
-import Chatbot from "./components/chatbot";
+import Chatbot from "./components/Chatbot";
 import "./App.css";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1976d2", // Primary color
+      main: "#1976d2",
     },
     secondary: {
-      main: "#dc004e", // Secondary color
+      main: "#dc004e",
     },
   },
 });
@@ -32,8 +33,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
+        <Navbar />
         <HeroSection />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About content={aboutContent} />} />
@@ -42,9 +43,7 @@ function App() {
           <Route path="/visit" element={<Visit />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-
         <Chatbot />
-
         <Footer />
       </Router>
     </ThemeProvider>

@@ -1,0 +1,80 @@
+:root {
+  --primary: #fff;
+  --secondary: #242424;
+  --gradient: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-45deg);
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn--primary {
+  background-color: var(--primary);
+  color: var(--secondary);
+  border: 1px solid var(--primary);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--primary);
+  padding: 8px 20px;
+  border: 1px solid var(--primary);
+}
+
+.btn--gradient {
+  background: var(--gradient);
+  color: #fff;
+  border: none;
+}
+
+.btn--gradient:hover {
+  background: var(--gradient);
+  filter: brightness(1.2);
+}
+
+.btn--medium {
+  padding: 10px 24px;
+  font-size: 18px;
+}
+
+.btn--large {
+  padding: 12px 30px;
+  font-size: 20px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-mobile {
+  text-decoration: none;
+}

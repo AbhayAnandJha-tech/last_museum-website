@@ -7,101 +7,79 @@ const Contact = () => {
       <div className="contact-header">
         <h1>Contact Us</h1>
         <p className="contact-subheader">
-          We're here to help with any inquiries or support you need.
+          We're here to assist you with any inquiries or support you need.
         </p>
       </div>
 
       <div className="contact-grid">
-        <div className="contact-card">
-          <h3>General Contact</h3>
-          <p>
-            <span role="img" aria-label="phone">
-              📞
-            </span>{" "}
-            Phone: 91-7428693710 – 17 (8 Lines) Extensions: Reception – 09 & 214
-          </p>
-        </div>
-
-        <div className="contact-card">
-          <h3>Booking & Educational Queries</h3>
-          <p>Contact: Shri Kailash Chandra or Shri Bharat Bhushan Srivastava</p>
-          <p>
-            <span role="img" aria-label="email">
-              📧
-            </span>{" "}
-            Email:{" "}
-            <a href="mailto:educationnscdelhi@gmail.com">
-              educationnscdelhi@gmail.com
-            </a>
-          </p>
-        </div>
-
-        <div className="contact-card">
-          <h3>Administrative Queries</h3>
-          <p>Contact: Dy Controller of Administration</p>
-          <p>
-            <span role="img" aria-label="email">
-              📧
-            </span>{" "}
-            Email: <a href="mailto:admn.nscd@gmail.com">admn.nscd@gmail.com</a>
-          </p>
-        </div>
-
-        <div className="contact-card">
-          <h3>Finance & Accounts Queries</h3>
-          <p>Contact: Dy Controller of Finance & Accounts</p>
-          <p>
-            <span role="img" aria-label="email">
-              📧
-            </span>{" "}
-            Email:{" "}
-            <a href="mailto:financenscd@gmail.com">financenscd@gmail.com</a>
-          </p>
-        </div>
-
-        <div className="contact-card">
-          <h3>Purchase Queries</h3>
-          <p>Contact: Section Officer</p>
-          <p>
-            <span role="img" aria-label="email">
-              📧
-            </span>{" "}
-            Email:{" "}
-            <a href="mailto:nscdelhi10@gmail.com">nscdelhi10@gmail.com</a>
-          </p>
-        </div>
-
-        <div className="contact-card">
-          <h3>Project Proposals</h3>
-          <p>Contact: Director</p>
-          <p>
-            <span role="img" aria-label="email">
-              📧
-            </span>{" "}
-            Email: <a href="mailto:nscdl01@gmail.com">nscdl01@gmail.com</a>
-          </p>
-        </div>
+        {[
+          {
+            title: "General Contact",
+            details:
+              "Phone: 91-7428693710 – 17 (8 Lines) Extensions: Reception – 09 & 214",
+            icon: "📞",
+          },
+          {
+            title: "Booking & Educational Queries",
+            details:
+              "Contact: Shri Kailash Chandra or Shri Bharat Bhushan Srivastava",
+            email: "educationnscdelhi@gmail.com",
+          },
+          {
+            title: "Administrative Queries",
+            details: "Contact: Dy Controller of Administration",
+            email: "admn.nscd@gmail.com",
+          },
+          {
+            title: "Finance & Accounts Queries",
+            details: "Contact: Dy Controller of Finance & Accounts",
+            email: "financenscd@gmail.com",
+          },
+          {
+            title: "Purchase Queries",
+            details: "Contact: Section Officer",
+            email: "nscdelhi10@gmail.com",
+          },
+          {
+            title: "Project Proposals",
+            details: "Contact: Director",
+            email: "nscdl01@gmail.com",
+          },
+        ].map((contact, index) => (
+          <div className="contact-card" key={index}>
+            <h3>{contact.title}</h3>
+            <p>{contact.details}</p>
+            {contact.email && (
+              <p>
+                <span role="img" aria-label="email">
+                  📧
+                </span>{" "}
+                Email: <a href={`mailto:${contact.email}`}>{contact.email}</a>
+              </p>
+            )}
+          </div>
+        ))}
       </div>
 
       <div className="contact-form">
         <h3>Send Us a Message</h3>
         <form>
-          <div className="form-group">
-            <input type="text" name="name" placeholder=" " required />
-            <label>Your Name</label>
-          </div>
-          <div className="form-group">
-            <input type="email" name="email" placeholder=" " required />
-            <label>Your Email</label>
-          </div>
-          <div className="form-group">
-            <input type="tel" name="phone" placeholder=" " />
-            <label>Your Phone Number</label>
-          </div>
-          <div className="form-group">
-            <input type="text" name="subject" placeholder=" " required />
-            <label>Subject</label>
-          </div>
+          {[
+            { type: "text", name: "name", label: "Your Name" },
+            { type: "email", name: "email", label: "Your Email" },
+            { type: "tel", name: "phone", label: "Your Phone Number" },
+            { type: "text", name: "subject", label: "Subject" },
+          ].map((input, index) => (
+            <div className="form-group" key={index}>
+              <input
+                type={input.type}
+                name={input.name}
+                placeholder=" "
+                required
+              />
+              <label>{input.label}</label>
+            </div>
+          ))}
           <div className="form-group">
             <textarea
               name="message"

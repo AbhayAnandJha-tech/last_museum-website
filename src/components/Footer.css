@@ -1,0 +1,23 @@
+.footerContainer {
+  padding: 20px 0;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+}
+
+.footerLink {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: #1976d2;
+}
+
+.gridContainer {
+  justify-content: space-around;
+}
+
+.footerItem {
+  margin: 8px 0;
+}
