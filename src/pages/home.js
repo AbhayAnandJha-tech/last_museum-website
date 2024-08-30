@@ -8,20 +8,20 @@ const exhibits = [
   {
     title: "Interactive Exhibits",
     description: "Engage with hands-on activities and interactive displays.",
-    image: "https://nscd.gov.in/wp-content/uploads/2024/01/IMG_0003.jpg",
+    image: "https://th-i.thgim.com/public/migration_catalog/article16678947.ece/alternates/FREE_1200/india_gallery_nandi_statue",
     link: "/exhibits/interactive",
   },
   {
     title: "Educational Workshops",
     description: "Learn through our specially designed workshops for all ages.",
-    image: "https://i.ytimg.com/vi/UYMnim8ECJU/maxresdefault.jpg",
+    image: "https://www.hlimg.com/images/stories/738X538/international-dolls-museum.jpg",
     link: "/exhibits/workshops",
   },
   {
     title: "Guided Tours",
     description: "Explore with expert guides who bring exhibits to life.",
     image:
-      "https://www.triphippies.com/wp-content/uploads/2023/08/national-science-center-delhi.webp",
+      "https://media.assettype.com/homegrown%2Fimport%2Fbook%2F12002-fdjercjkjj-1585903159.jpeg",
     link: "/exhibits/tours",
   },
 ];
