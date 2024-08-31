@@ -4,7 +4,7 @@ import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 import HeroSection from "./components/HeroSection";
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -15,7 +15,8 @@ import Contact from "./pages/contact";
 import InteractiveExhibits from "./components/InteractiveExhibits";
 import EducationalWorkshops from "./components/EducationalWorkshops";
 import GuidedTours from "./components/GuidedTours";
-import Chatbot from "./components/Chatbot";
+import Chatbot from "./components/chatbot";
+import Main from './pages/main'
 import "./App.css";
 
 const theme = createTheme({
@@ -37,8 +38,9 @@ function App() {
       <CssBaseline />
       <Router>
         <Navbar />
-        <HeroSection />
+         <HeroSection />
         <Routes>
+        
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About content={aboutContent} />} />
           <Route path="/exhibitions" element={<Exhibitions />} />
