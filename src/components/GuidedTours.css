@@ -1,0 +1,125 @@
+.guided-tours-container {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  color: #333;
+  max-width: 1200px; /* Ensures balanced content width */
+  margin: 0 auto;
+}
+
+.guided-tours-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #333;
+}
+
+.guided-tours-description {
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.guided-tours-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(350px, 1fr)
+  ); /* Adequate box size */
+  gap: 30px; /* Proper spacing between cards */
+}
+
+.guided-tour-card {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Increased height for clear visibility */
+  perspective: 1000px; /* Allows the card to be viewed in 3D space */
+}
+
+.guided-tour-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.guided-tour-card:hover .guided-tour-inner {
+  transform: rotateY(180deg); /* Flips the card */
+}
+
+.guided-tour-front,
+.guided-tour-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.guided-tour-front {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.guided-tour-image {
+  width: 100%;
+  height: 60%; /* Occupies 60% of the card height */
+  object-fit: cover; /* Ensures full coverage without leaving space */
+  display: block;
+  margin: 0; /* Removes space above the image */
+}
+
+.guided-tour-title {
+  font-size: 1.5rem;
+  margin: 10px 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center; /* Centers the title */
+}
+
+.guided-tour-description {
+  font-size: 1rem;
+  margin: 10px 20px;
+  line-height: 1.4;
+  color: #666;
+}
+
+.guided-tour-back {
+  background: #4a90e2; /* Yellow color for the back side */
+  color: white;
+  transform: rotateY(180deg); /* Hide the back side initially */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px; /* Added padding for spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.guided-tour-back-title {
+  font-size: 2rem; /* Larger font size for heading */
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.guided-tour-back-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: white;
+  text-align: center;
+  max-width: 600px; /* Controls the width of text */
+}

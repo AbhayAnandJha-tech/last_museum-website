@@ -1,23 +1,84 @@
+/* Footer.css */
+
 .footerContainer {
-  padding: 20px 0;
+  padding: 40px 0;
   background-color: #1a1a1a;
   color: #fff;
   text-align: center;
+  border-top: 4px solid #00adb5;
 }
 
 .footerLink {
-  color: #fff;
+  color: #00adb5;
   text-decoration: none;
+  margin: 5px 0;
+  transition: color 0.3s ease;
 }
 
 .footerLink:hover {
-  color: #1976d2;
+  color: #fff;
 }
 
 .gridContainer {
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .footerItem {
-  margin: 8px 0;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column; /* Align icons vertically */
+  gap: 20px;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  color: #00adb5;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-title {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.quickLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  gap: 10px; /* Space between links */
+}
+
+.address {
+  margin-top: 10px; /* Adds spacing above the address */
+  color: #fff; /* Keeps address text color consistent */
+}
+
+@media (max-width: 960px) {
+  .footerContainer {
+    padding: 30px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footerContainer {
+    padding: 20px 10px;
+  }
+
+  .footer-social {
+    gap: 15px;
+  }
 }

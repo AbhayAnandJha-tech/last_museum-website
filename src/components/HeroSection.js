@@ -6,6 +6,7 @@ import "./HeroSection.css";
 function HeroSection() {
   return (
     <div className="hero-section">
+      <div className="hero-overlay"></div>
       <Container maxWidth="lg">
         <Box className="hero-content" textAlign="center">
           <Typography variant="h2" className="hero-title">

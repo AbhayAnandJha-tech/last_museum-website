@@ -121,6 +121,36 @@ body {
   font-size: 0.9rem;
 }
 
+/* New styles for EducationalWorkshops and GuidedTours */
+.educational-workshops-container,
+.guided-tours-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.workshop-card,
+.tour-highlight-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.workshop-card:hover,
+.tour-highlight-card:hover {
+  transform: translateY(-5px);
+}
+
+.workshop-image,
+.tour-highlight-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
 @media (max-width: 768px) {
   .App-header {
     min-height: 50vh;
@@ -138,6 +168,11 @@ body {
 
   .HeroSection p {
     font-size: 1.2rem;
+  }
+
+  .educational-workshops-container,
+  .guided-tours-container {
+    padding: 30px 15px;
   }
 }
 

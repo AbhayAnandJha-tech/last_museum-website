@@ -1,6 +1,4 @@
-// Home.js
 import React from "react";
-import { Container, Typography, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import "./home.css";
 
@@ -8,13 +6,15 @@ const exhibits = [
   {
     title: "Interactive Exhibits",
     description: "Engage with hands-on activities and interactive displays.",
-    image: "https://th-i.thgim.com/public/migration_catalog/article16678947.ece/alternates/FREE_1200/india_gallery_nandi_statue",
+    image:
+      "https://th-i.thgim.com/public/migration_catalog/article16678947.ece/alternates/FREE_1200/india_gallery_nandi_statue",
     link: "/exhibits/interactive",
   },
   {
     title: "Educational Workshops",
     description: "Learn through our specially designed workshops for all ages.",
-    image: "https://www.hlimg.com/images/stories/738X538/international-dolls-museum.jpg",
+    image:
+      "https://www.hlimg.com/images/stories/738X538/international-dolls-museum.jpg",
     link: "/exhibits/workshops",
   },
   {
@@ -28,41 +28,36 @@ const exhibits = [
 
 function Home() {
   return (
-    <Container maxWidth="lg" className="home-container">
-      <Typography variant="h2" className="home-title">
-        Welcome to Our Museum
-      </Typography>
-      <Typography variant="h5" className="home-subtitle">
-        Discover the wonders of science and technology
-      </Typography>
-      <Grid container spacing={3} className="home-grid">
+    <div className="home-container">
+      <h1 className="home-title">
+        Discover the Wonders of Science and Technology
+      </h1>
+      <div className="home-grid">
         {exhibits.map((exhibit, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index} className="home-feature">
-            <Link to={exhibit.link} className="feature-card">
-              <div className="flip-card">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <Typography variant="h6" className="feature-title">
-                      {exhibit.title}
-                    </Typography>
-                    <Typography className="feature-description">
-                      {exhibit.description}
-                    </Typography>
-                  </div>
-                  <div className="flip-card-back">
-                    <img
-                      src={exhibit.image}
-                      alt={exhibit.title}
-                      className="feature-image"
-                    />
-                  </div>
+          <Link to={exhibit.link} key={index} className="feature-card">
+            <div className="exhibit-card">
+              <div className="exhibit-front">
+                <h3 className="feature-title">{exhibit.title}</h3>
+                <p className="feature-description">{exhibit.description}</p>
+              </div>
+              <div className="exhibit-back">
+                <div className="exhibit-image-container">
+                  <img
+                    src={exhibit.image}
+                    alt={exhibit.title}
+                    className="exhibit-image"
+                  />
                 </div>
               </div>
-            </Link>
-          </Grid>
+            </div>
+          </Link>
         ))}
-      </Grid>
-    </Container>
+      </div>
+      <div className="explore-more">
+        <h2>Embark on a Journey of Discovery</h2>
+        <p>Uncover the mysteries of the universe, one exhibit at a time.</p>
+      </div>
+    </div>
   );
 }
 

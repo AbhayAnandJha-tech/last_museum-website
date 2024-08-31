@@ -12,6 +12,9 @@ import Exhibitions from "./pages/exhibitions";
 import Tickets from "./pages/tickets";
 import Visit from "./pages/visit";
 import Contact from "./pages/contact";
+import InteractiveExhibits from "./components/InteractiveExhibits";
+import EducationalWorkshops from "./components/EducationalWorkshops";
+import GuidedTours from "./components/GuidedTours";
 import Chatbot from "./components/Chatbot";
 import "./App.css";
 
@@ -42,6 +45,15 @@ function App() {
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/visit" element={<Visit />} />
           <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/exhibits/interactive"
+            element={<InteractiveExhibits />}
+          />
+          <Route
+            path="/exhibits/workshops"
+            element={<EducationalWorkshops />}
+          />
+          <Route path="/exhibits/tours" element={<GuidedTours />} />
         </Routes>
         <Chatbot />
         <Footer />

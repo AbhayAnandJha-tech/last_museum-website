@@ -1,27 +1,54 @@
 import React from "react";
-import { Container, Grid, Link, Typography } from "@material-ui/core";
+import { Container, Box, Grid, Link, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./Footer.css";
 
 const useStyles = makeStyles((theme) => ({
-  footerContainer: {
-    padding: "20px 0",
+  footer: {
+    padding: theme.spacing(6, 2),
     backgroundColor: "#1a1a1a",
     color: "#fff",
-    textAlign: "center",
+    borderTop: "4px solid #00adb5",
   },
-  footerLink: {
-    color: "#fff",
+  link: {
+    color: "#00adb5",
     textDecoration: "none",
+    transition: "color 0.3s",
     "&:hover": {
-      color: "#1976d2",
+      color: "#fff",
     },
   },
-  gridContainer: {
-    justifyContent: "space-around",
+  footerTitle: {
+    marginBottom: theme.spacing(2),
+    fontWeight: 600,
+    textTransform: "uppercase",
+    letterSpacing: "1px",
   },
-  footerItem: {
-    margin: theme.spacing(1, 0),
+  socialContainer: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    marginTop: theme.spacing(1),
+  },
+  socialIcons: {
+    display: "flex",
+    gap: theme.spacing(2),
+    marginTop: theme.spacing(1),
+  },
+  icon: {
+    fontSize: "1.5rem",
+    transition: "color 0.3s",
+    "&:hover": {
+      color: "#fff",
+    },
+  },
+  quickLinks: {
+    display: "flex",
+    flexDirection: "column",
+    gap: theme.spacing(1),
+  },
+  address: {
+    marginTop: theme.spacing(2),
   },
 }));
 
@@ -29,58 +56,69 @@ function Footer() {
   const classes = useStyles();
 
   return (
-    <footer className={classes.footerContainer}>
-      <Container maxWidth="lg">
-        <Grid container spacing={2} className={classes.gridContainer}>
-          <Grid item xs={12} sm={4} className={classes.footerItem}>
-            <Typography variant="h6">Quick Links</Typography>
-            <Link href="/about" className={classes.footerLink}>
+    <footer className={classes.footer}>
+      <Container>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={4}>
+            <Typography variant="h6" className={classes.footerTitle}>
               About Us
-            </Link>
-            <br />
-            <Link href="/visit" className={classes.footerLink}>
-              Visit
-            </Link>
-            <br />
-            <Link href="/contact" className={classes.footerLink}>
-              Contact
-            </Link>
-          </Grid>
-          <Grid item xs={12} sm={4} className={classes.footerItem}>
-            <Typography variant="h6">Follow Us</Typography>
-            <Link
-              href="https://www.instagram.com/national_science_centre_delhi/"
-              className={classes.footerLink}
-            >
-              Instagram
-            </Link>
-            <br />
-            <Link
-              href="https://www.facebook.com/nsc.delhi/"
-              className={classes.footerLink}
-            >
-              Facebook
-            </Link>
-            <br />
-            <Link
-              href="https://x.com/SciMuseumDelhi"
-              className={classes.footerLink}
-            >
-              Twitter
-            </Link>
-          </Grid>
-          <Grid item xs={12} sm={4} className={classes.footerItem}>
-            <Typography variant="h6">Contact Us</Typography>
-            <Typography>
-              Phone: (011) 23371212
-              <br />
-              Email: info@nscd.gov.in
+            </Typography>
+            <Typography variant="body2">
+              The Science Museum is dedicated to inspiring a love of science and
+              learning in visitors of all ages. Explore our interactive
+              exhibits, educational workshops, and guided tours.
             </Typography>
           </Grid>
+          <Grid item xs={12} md={4}>
+            <Typography variant="h6" className={classes.footerTitle}>
+              Quick Links
+            </Typography>
+            <Box className={classes.quickLinks}>
+              <Link href="/explore" className={classes.link}>
+                Explore
+              </Link>
+              <Link href="/visit" className={classes.link}>
+                Visit
+              </Link>
+              <Link href="/contact" className={classes.link}>
+                Contact
+              </Link>
+              <Box className={classes.address}>
+                <Typography variant="body2" style={{ fontWeight: "bold" }}>
+                  Visit Us
+                </Typography>
+                <Typography variant="body2">
+                  National Science Centre, Bhairon Road, Near Gate No.1, Pragati
+                  Maidan, New Delhi, Delhi 110001, India.
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Typography variant="h6" className={classes.footerTitle}>
+              Follow Us
+            </Typography>
+            <Box className={classes.socialContainer}>
+              <Typography variant="body2">
+                Stay connected through our social media channels:
+              </Typography>
+              <Box className={classes.socialIcons}>
+                <Link href="https://facebook.com" className={classes.link}>
+                  <i className={`fab fa-facebook ${classes.icon}`}></i>
+                </Link>
+                <Link href="https://instagram.com" className={classes.link}>
+                  <i className={`fab fa-instagram ${classes.icon}`}></i>
+                </Link>
+                <Link href="https://twitter.com" className={classes.link}>
+                  <i className={`fab fa-twitter ${classes.icon}`}></i>
+                </Link>
+                <Link href="https://linkedin.com" className={classes.link}>
+                  <i className={`fab fa-linkedin ${classes.icon}`}></i>
+                </Link>
+              </Box>
+            </Box>
+          </Grid>
         </Grid>
-        <Typography variant="body2" style={{ marginTop: 20 }}>
-          &copy; 2024 Science Museum. All rights reserved.
-        </Typography>
       </Container>
     </footer>
   );
