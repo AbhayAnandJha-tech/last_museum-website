@@ -89,38 +89,40 @@ function Navbar() {
   const classes = useStyles();
 
   return (
-    <AppBar position="static" className={classes.appBar}>
-      <Toolbar className={classes.toolbar}>
-        <Typography
-          variant="h6"
-          className={classes.logo}
-          component="a"
-          href="#"
-        >
-          Science Museum
-        </Typography>
-        <div className={classes.navLinks}>
-          {menuLinks.map((link) => (
-            <Link
-              key={link.title}
-              href={link.path}
-              className={classes.link}
-              onClick={(e) => {
-                // Prevent default anchor link behavior
-                e.preventDefault();
-                // Call smooth scroll function
-                scrollToSection(link.path);
-              }}
-            >
-              {link.title}
-            </Link>
-          ))}
-          <Button id="gettickets" variant="contained" className={classes.button}>
-            Get Tickets
-          </Button>
-        </div>
-      </Toolbar>
-    </AppBar>
+    <div className="fixed top-0 z-30 w-full">
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar className={classes.toolbar}>
+          <Typography
+            variant="h6"
+            className={classes.logo}
+            component="a"
+            href="#"
+          >
+            Science Museum
+          </Typography>
+          <div className={classes.navLinks}>
+            {menuLinks.map((link) => (
+              <Link
+                key={link.title}
+                href={link.path}
+                className={classes.link}
+                onClick={(e) => {
+                  // Prevent default anchor link behavior
+                  e.preventDefault();
+                  // Call smooth scroll function
+                  scrollToSection(link.path);
+                }}
+              >
+                {link.title}
+              </Link>
+            ))}
+            <Button id="gettickets" variant="contained" className={classes.button}>
+              Get Tickets
+            </Button>
+          </div>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 }
 
