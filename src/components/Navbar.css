@@ -12,17 +12,6 @@
   flex-wrap: wrap;
 }
 
-html {
-  scroll-behavior: smooth; /* This enables smooth scrolling */
-}
-
-/* Optional: Add custom smooth scrolling effect */
-html, body {
-  scroll-behavior: smooth;
-  transition: scroll 0.5s ease-in-out; /* Adjust duration and easing function as needed */
-}
-
-
 .logo {
   font-family: "Roboto", sans-serif;
   font-weight: bold;

@@ -10,13 +10,14 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import Exhibitions from "./pages/exhibitions";
 import Tickets from "./pages/tickets";
+import Explore from "./pages/explore";
 import Visit from "./pages/visit";
 import Contact from "./pages/contact";
 import InteractiveExhibits from "./components/InteractiveExhibits";
 import EducationalWorkshops from "./components/EducationalWorkshops";
 import GuidedTours from "./components/GuidedTours";
 import Chatbot from "./components/chatbot";
-import Main from './pages/main'
+import Main from "./pages/main";
 import "./App.css";
 
 const theme = createTheme({
@@ -38,12 +39,11 @@ function App() {
       <CssBaseline />
       <Router>
         <Navbar />
-         {/* <HeroSection /> */}
+        <HeroSection />
         <Routes>
-        
-        <Route path="/" element={<Main />} />
-          {/* <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About content={aboutContent} />} />
+          <Route path="/explore" element={<Explore />} />
           <Route path="/exhibitions" element={<Exhibitions />} />
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/visit" element={<Visit />} />
@@ -56,10 +56,10 @@ function App() {
             path="/exhibits/workshops"
             element={<EducationalWorkshops />}
           />
-          <Route path="/exhibits/tours" element={<GuidedTours />} /> */}
+          <Route path="/exhibits/tours" element={<GuidedTours />} />
         </Routes>
         <Chatbot />
-        
+        <Footer />
       </Router>
     </ThemeProvider>
   );

@@ -1,15 +1,7 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Button, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import "./Navbar.css"; // Assuming CSS file is named Navbar.css
-
-const menuLinks = [
-  { title: "About", path: "#about" },
-  { title: "Exhibitions", path: "#exhibitions" },
-  { title: "Explore", path: "#explore" },
-  { title: "Visit", path: "#visit" },
-  { title: "Contact", path: "#contact" },
-];
+import "./Navbar.css";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -74,55 +66,42 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// Function for smooth scrolling
-const scrollToSection = (id) => {
-  const section = document.querySelector(id);
-  if (section) {
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
-};
-
 function Navbar() {
   const classes = useStyles();
 
   return (
-    <div className="fixed top-0 z-30 w-full">
-      <AppBar position="static" className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
-          <Typography
-            variant="h6"
-            className={classes.logo}
-            component="a"
-            href="#"
-          >
-            Science Museum
-          </Typography>
-          <div className={classes.navLinks}>
-            {menuLinks.map((link) => (
-              <Link
-                key={link.title}
-                href={link.path}
-                className={classes.link}
-                onClick={(e) => {
-                  // Prevent default anchor link behavior
-                  e.preventDefault();
-                  // Call smooth scroll function
-                  scrollToSection(link.path);
-                }}
-              >
-                {link.title}
-              </Link>
-            ))}
-            <Button id="gettickets" variant="contained" className={classes.button}>
-              Get Tickets
-            </Button>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <AppBar position="static" className={classes.appBar}>
+      <Toolbar className={classes.toolbar}>
+        <Typography
+          variant="h6"
+          className={classes.logo}
+          component={Link}
+          href="/"
+        >
+          Science Museum
+        </Typography>
+        <div className={classes.navLinks}>
+          <Link href="/about" className={classes.link}>
+            About
+          </Link>
+          <Link href="/explore" className={classes.link}>
+            Explore
+          </Link>
+          <Link href="/exhibitions" className={classes.link}>
+            Exhibitions
+          </Link>
+          <Link href="/visit" className={classes.link}>
+            Visit
+          </Link>
+          <Link href="/contact" className={classes.link}>
+            Contact
+          </Link>
+          <Button variant="contained" className={classes.button}>
+            Get Tickets
+          </Button>
+        </div>
+      </Toolbar>
+    </AppBar>
   );
 }
 
