@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Button } from "@material-ui/core";
+import { Text, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; // Import Framer Motion
 import "./HeroSection.css";
@@ -40,12 +40,12 @@ function HeroSection() {
           variants={textVariant}
           transition={{ duration: 1, delay: 0.5 }} // Adjust the timing as needed
         >
-          <Typography
+          <Text
             variant="h2"
             className="hero-title text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
           >
             Welcome to the Science Museum
-          </Typography>
+          </Text>
         </motion.div>
 
         <motion.div
@@ -54,12 +54,12 @@ function HeroSection() {
           variants={textVariant}
           transition={{ duration: 1, delay: 0.8 }} // Slightly delay for subtitle
         >
-          <Typography
+          <Text
             variant="h5"
             className="hero-subtitle text-lg sm:text-xl md:text-2xl mb-8"
           >
             Explore the intersection of science, technology, and creativity.
-          </Typography>
+          </Text>
         </motion.div>
 
         <motion.div

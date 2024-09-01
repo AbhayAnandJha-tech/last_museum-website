@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ThemeProvider, createTheme } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import BookingForm from "./pages/BookingForm"
+// Import your components
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
 import HeroSection from "./components/HeroSection";
@@ -21,13 +21,26 @@ import BookingSuccess from "./pages/bookingsuccess";
 import Main from "./pages/main";
 import "./App.css";
 
-const theme = createTheme({
-  palette: {
+// Define the custom theme with Chakra UI
+const theme = extendTheme({
+  colors: {
     primary: {
-      main: "#1976d2",
+      500: "#1976d2",
     },
     secondary: {
-      main: "#dc004e",
+      500: "#dc004e",
+    },
+  },
+  styles: {
+    global: {
+      // Define global styles here
+      body: {
+        fontFamily: "Arial, sans-serif",
+        color: "gray.800",
+        bg: "gray.50",
+        margin: 0,
+        padding: 0,
+      },
     },
   },
 });
@@ -36,13 +49,12 @@ function App() {
   const aboutContent = "Information about our science center.";
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <ChakraProvider theme={theme}>
       <Router>
         <Navbar />
-        {/* <HeroSection /> */}
         <Routes>
           <Route path="/" element={<Main />} />
+          {/* Uncomment and use the routes you need */}
           {/* <Route path="/" element={<Home />} />
           <Route path="/about" element={<About content={aboutContent} />} />
           <Route path="/exhibitions" element={<Exhibitions />} />
@@ -50,19 +62,14 @@ function App() {
           <Route path="/visit" element={<Visit />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/bookingsuccess" element={<BookingSuccess />} />
-          <Route
-            path="/exhibits/interactive"
-            element={<InteractiveExhibits />}
-          />
-          <Route
-            path="/exhibits/workshops"
-            element={<EducationalWorkshops />}
-          />
+          <Route path="/exhibits/interactive" element={<InteractiveExhibits />} />
+          <Route path="/exhibits/workshops" element={<EducationalWorkshops />} />
           <Route path="/exhibits/tours" element={<GuidedTours />} /> */}
+          <Route path="/get-tickets" element={<BookingForm />} />
         </Routes>
         <Chatbot />
       </Router>
-    </ThemeProvider>
+    </ChakraProvider>
   );
 }
 

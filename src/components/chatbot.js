@@ -1,133 +1,30 @@
 import React, { useState } from "react";
 import {
-  Paper,
-  TextField,
+  Box,
+  Input,
   Button,
-  Typography,
-  CircularProgress,
+  Text,
+  Spinner,
   IconButton,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import MinimizeIcon from "@material-ui/icons/Remove";
-import ScienceIcon from "@material-ui/icons/EmojiObjects"; // For minimized state icon
-import PersonIcon from "@material-ui/icons/Person"; // Scientist icon
-
-const useStyles = makeStyles((theme) => ({
-  chatbotContainer: {
-    position: "fixed",
-    bottom: 20,
-    right: 20,
-    width: 350,
-    padding: 20,
-    borderRadius: 15,
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-    backgroundColor: "#ffffff",
-    [theme.breakpoints.down("xs")]: {
-      width: "90%",
-      bottom: 10,
-      right: 10,
-    },
-  },
-  minimizedChatbot: {
-    position: "fixed",
-    bottom: 20,
-    right: 20,
-    width: 60,
-    height: 60,
-    borderRadius: "50%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-    backgroundColor: "#1976d2",
-    color: "#fff",
-    cursor: "pointer",
-    [theme.breakpoints.down("xs")]: {
-      bottom: 10,
-      right: 10,
-    },
-  },
-  chatHeader: {
-    textAlign: "center",
-    marginBottom: 15,
-    color: "#1976d2",
-    fontWeight: "bold",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    background: "linear-gradient(to right, #1976d2, #42a5f5)",
-    padding: "5px 10px",
-    borderRadius: "10px",
-    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-  },
-  headerText: {
-    display: "flex",
-    alignItems: "center",
-    fontWeight: 600,
-    fontSize: "1.1rem",
-  },
-  chatArea: {
-    height: 300,
-    overflowY: "auto",
-    marginBottom: 20,
-    padding: "10px 0",
-    borderTop: "1px solid #e0e0e0",
-    borderBottom: "1px solid #e0e0e0",
-  },
-  messageContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
-  },
-  userMessage: {
-    alignSelf: "flex-end",
-    backgroundColor: "#e3f2fd",
-    color: "#333",
-    padding: 10,
-    borderRadius: 10,
-    margin: 5,
-    maxWidth: "80%",
-    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-  },
-  botMessage: {
-    backgroundColor: "#f5f5f5",
-    color: "#333",
-    padding: 10,
-    borderRadius: 10,
-    margin: 5,
-    maxWidth: "80%",
-    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-  },
-  inputArea: {
-    display: "flex",
-    alignItems: "center",
-  },
-  inputField: {
-    flexGrow: 1,
-    marginRight: theme.spacing(1),
-  },
-  sendButton: {
-    backgroundColor: "#1976d2",
-    color: "#fff",
-    "&:hover": {
-      backgroundColor: "#155fa0",
-    },
-  },
-  typingIndicator: {
-    display: "flex",
-    alignItems: "center",
-    fontStyle: "italic",
-    color: "#888",
-    padding: 10,
-  },
-}));
+} from "@chakra-ui/react";
+import { FaMinus, FaLightbulb, FaUser } from "react-icons/fa";
 
 function Chatbot() {
-  const classes = useStyles();
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isBotTyping, setIsBotTyping] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
+
+  // Function for smooth scrolling
+  const scrollToSection = (id) => {
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   const handleSend = () => {
     if (input.trim()) {
@@ -162,63 +59,132 @@ function Chatbot() {
   };
 
   return isMinimized ? (
-    <div className={classes.minimizedChatbot} onClick={toggleMinimize}>
-      <ScienceIcon style={{ fontSize: 40 }} />{" "}
-    </div>
+    <Box
+      position="fixed"
+      bottom="20px"
+      right="20px"
+      width="60px"
+      height="60px"
+      borderRadius="full"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      boxShadow="0 4px 8px rgba(0, 0, 0, 0.2)"
+      backgroundColor="#1976d2"
+      color="#fff"
+      cursor="pointer"
+      onClick={toggleMinimize}
+    >
+      <FaLightbulb size={24} />
+    </Box>
   ) : (
-    <Paper className={classes.chatbotContainer}>
-      <div className={classes.chatHeader}>
-        <Typography className={classes.headerText}>
-          <PersonIcon style={{ marginRight: 8 }} />{" "}
-          {/* Scientist cartoon icon */}
+    <Box
+      position="fixed"
+      bottom="20px"
+      right="20px"
+      width="350px"
+      padding="20px"
+      borderRadius="15px"
+      boxShadow="0 4px 8px rgba(0, 0, 0, 0.2)"
+      backgroundColor="#ffffff"
+      display="flex"
+      flexDirection="column"
+      height="auto"
+      maxHeight="400px"
+      overflow="hidden"
+      transition="width 0.3s ease-in-out"
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: -1,
+        borderRadius: "15px",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+      }}
+    >
+      <Box
+        textAlign="center"
+        mb="15px"
+        color="#1976d2"
+        fontWeight="bold"
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        bgGradient="linear(to-r, #1976d2, #42a5f5)"
+        p="5px 10px"
+        borderRadius="10px"
+        boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)"
+      >
+        <Text
+          display="flex"
+          alignItems="center"
+          fontWeight="600"
+          fontSize="1.1rem"
+        >
+          <FaUser style={{ marginRight: 8 }} />
           Chat with us
-        </Typography>
-        <IconButton onClick={toggleMinimize} size="small">
-          <MinimizeIcon />
+        </Text>
+        <IconButton onClick={toggleMinimize} size="sm" aria-label="Minimize chat">
+          <FaMinus />
         </IconButton>
-      </div>
-      <div className={classes.chatArea}>
+      </Box>
+      <Box
+        flex="1"
+        overflowY="auto"
+        mb="20px"
+        p="10px 0"
+        borderTop="1px solid #e0e0e0"
+        borderBottom="1px solid #e0e0e0"
+      >
         {messages.map((message, index) => (
-          <div
+          <Box
             key={index}
-            className={classes.messageContainer}
-            style={{ alignItems: message.user ? "flex-end" : "flex-start" }}
+            display="flex"
+            flexDirection="column"
+            alignItems={message.user ? "flex-end" : "flex-start"}
           >
-            <Paper
-              className={
-                message.user ? classes.userMessage : classes.botMessage
-              }
+            <Box
+              bg={message.user ? "#e3f2fd" : "#f5f5f5"}
+              color="#333"
+              p="10px"
+              borderRadius="10px"
+              mb="5px"
+              maxWidth="80%"
+              boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)"
             >
               {message.text}
-            </Paper>
-          </div>
+            </Box>
+          </Box>
         ))}
         {isBotTyping && (
-          <div className={classes.typingIndicator}>
-            <CircularProgress size={16} style={{ marginRight: 8 }} />
+          <Box display="flex" alignItems="center" fontStyle="italic" color="#888" p="10px">
+            <Spinner size="sm" mr="2" />
             Bot is typing...
-          </div>
+          </Box>
         )}
-      </div>
-      <div className={classes.inputArea}>
-        <TextField
-          className={classes.inputField}
-          variant="outlined"
-          size="small"
+      </Box>
+      <Box display="flex" alignItems="center">
+        <Input
+          variant="outline"
+          size="sm"
           placeholder="Type your message..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={(e) => e.key === "Enter" && handleSend()}
+          mr="2"
         />
         <Button
           onClick={handleSend}
-          variant="contained"
-          className={classes.sendButton}
+          colorScheme="blue"
+          variant="solid"
         >
           Send
         </Button>
-      </div>
-    </Paper>
+      </Box>
+    </Box>
   );
 }
 
