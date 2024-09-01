@@ -38,10 +38,11 @@ function App() {
       <CssBaseline />
       <Router>
         <Navbar />
-         <HeroSection />
+         {/* <HeroSection /> */}
         <Routes>
         
-          <Route path="/" element={<Home />} />
+        <Route path="/" element={<Main />} />
+          {/* <Route path="/" element={<Home />} />
           <Route path="/about" element={<About content={aboutContent} />} />
           <Route path="/exhibitions" element={<Exhibitions />} />
           <Route path="/tickets" element={<Tickets />} />
@@ -55,10 +56,10 @@ function App() {
             path="/exhibits/workshops"
             element={<EducationalWorkshops />}
           />
-          <Route path="/exhibits/tours" element={<GuidedTours />} />
+          <Route path="/exhibits/tours" element={<GuidedTours />} /> */}
         </Routes>
         <Chatbot />
-        <Footer />
+        
       </Router>
     </ThemeProvider>
   );
