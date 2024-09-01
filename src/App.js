@@ -17,6 +17,7 @@ import InteractiveExhibits from "./components/InteractiveExhibits";
 import EducationalWorkshops from "./components/EducationalWorkshops";
 import GuidedTours from "./components/GuidedTours";
 import Chatbot from "./components/chatbot";
+import BookingSuccess from "./pages/bookingsuccess";
 import Main from "./pages/main";
 import "./App.css";
 
@@ -48,6 +49,7 @@ function App() {
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/visit" element={<Visit />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/bookingsuccess" element={<BookingSuccess />} />
           <Route
             path="/exhibits/interactive"
             element={<InteractiveExhibits />}
