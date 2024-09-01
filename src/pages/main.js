@@ -1,28 +1,35 @@
 import React from 'react'
 import Footer from "../components/footer";
 import Hero from "../components/HeroSection";
-import Home from "./home";
 import About from "./about";
 import Exhibitions from "./exhibitions";
-import Tickets from "./tickets";
-import Visit from "./tickets";
 import Contact from "./contact";
-import InteractiveExhibits from "../components/InteractiveExhibits";
-import EducationalWorkshops from "../components/EducationalWorkshops";
-import GuidedTours from "../components/GuidedTours";
+import Visit from './visit';
 
-const main = () => {
+const Main = () => {
     return (
         <div>
             <div id="/">
                 <Hero />
-                <div id="" className="scroll-m-16">
+                <div id="exhibitions" className="scroll-m-16">
                     <Exhibitions />
                 </div>
+               
                 
+                <div id="about" className="scroll-m-16">
+                    <About />
+                </div>
+                
+                <div id="contact" className="scroll-m-16">
+                    <Contact />
+                </div>
+                <div id="visit" className="scroll-m-16">
+                    <Visit/>
+                </div>
             </div>
+            <Footer />
         </div>
     )
 }
 
-export default main
+export default Main;
