@@ -9,8 +9,8 @@ import HeroSection from "./components/HeroSection";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Exhibitions from "./pages/exhibitions";
-import Tickets from "./pages/tickets";
 import Explore from "./pages/explore";
+import Tickets from "./pages/tickets";
 import Visit from "./pages/visit";
 import Contact from "./pages/contact";
 import InteractiveExhibits from "./components/InteractiveExhibits";
@@ -39,11 +39,11 @@ function App() {
       <CssBaseline />
       <Router>
         <Navbar />
-        <HeroSection />
+        {/* <HeroSection /> */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Main />} />
+          {/* <Route path="/" element={<Home />} />
           <Route path="/about" element={<About content={aboutContent} />} />
-          <Route path="/explore" element={<Explore />} />
           <Route path="/exhibitions" element={<Exhibitions />} />
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/visit" element={<Visit />} />
@@ -56,10 +56,9 @@ function App() {
             path="/exhibits/workshops"
             element={<EducationalWorkshops />}
           />
-          <Route path="/exhibits/tours" element={<GuidedTours />} />
+          <Route path="/exhibits/tours" element={<GuidedTours />} /> */}
         </Routes>
         <Chatbot />
-        <Footer />
       </Router>
     </ThemeProvider>
   );
