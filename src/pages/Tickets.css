@@ -1,0 +1,160 @@
+/* Reset some basic styles for consistency across browsers */
+body, h2, p, table, th, td, input, select, label, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+caption {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: left;
+    font-size: 1em;
+}
+
+th {
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Tickets.css */
+
+/* General styles for form */
+.form-group {
+    margin-bottom: 20px; /* Space between each form group */
+    position: relative;  /* Position relative to use absolute positioning for labels */
+  }
+  
+  label {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #666;
+    pointer-events: none; /* Allows clicks on input elements */
+    transition: all 0.2s ease;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 10px;
+    padding-top: 20px; /* Extra space for label */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px; /* Space between checkbox and label */
+  }
+  
+  input:focus + label,
+  input:not(:placeholder-shown) + label,
+  select:focus + label,
+  select:not([value=""]) + label {
+    top: -20px;
+    font-size: 12px;
+    color: #333;
+  }
+  
+  input:focus,
+  select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Styles for terms and conditions */
+  .form-group.terms {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Styling the calculate button */
+  .calculate-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .calculate-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styling for submit button */
+  input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #218838;
+  }
+  
+  /* QR code styling */
+  .qr-code {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .qr-code img {
+    max-width: 100%;
+    height: auto;
+  }
+  
