@@ -1,6 +1,7 @@
 import React from "react";
 import AboutHeroSection from "../components/AboutHeroSection";
 import "./about.css";
+import aboutLogo from "../assets/bgimage/aboutlogo.jpg";
 
 const About = () => {
   return (
@@ -19,11 +20,7 @@ const About = () => {
 
         <div className="about-content">
           <section className="about-section">
-            <img
-              src="C:\Projects\SIH_2024\Backup\u...._museum-website\museum-website\src\images"
-              alt="Science Centre"
-              className="about-image"
-            />
+            <img src="aboutLogo" alt="Science Centre" className="about-image" />
             <p>
               Established in 1992, the Centre serves as a beacon of knowledge
               and innovation, drawing in visitors from around the globe,
