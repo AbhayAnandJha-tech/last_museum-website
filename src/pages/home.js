@@ -29,35 +29,38 @@ const exhibits = [
 
 function Home() {
   return (
-    <div className="home-container">
+    <div>
+      {" "}
       <HeroSection />
-      <h1 className="home-title">
-        Discover the Wonders of Science and Technology
-      </h1>
-      <div className="home-grid">
-        {exhibits.map((exhibit, index) => (
-          <Link to={exhibit.link} key={index} className="feature-card">
-            <div className="exhibit-card">
-              <div className="exhibit-front">
-                <h3 className="feature-title">{exhibit.title}</h3>
-                <p className="feature-description">{exhibit.description}</p>
-              </div>
-              <div className="exhibit-back">
-                <div className="exhibit-image-container">
-                  <img
-                    src={exhibit.image}
-                    alt={exhibit.title}
-                    className="exhibit-image"
-                  />
+      <div className="home-container">
+        <h1 className="home-title">
+          Discover the Wonders of Science and Technology
+        </h1>
+        <div className="home-grid">
+          {exhibits.map((exhibit, index) => (
+            <Link to={exhibit.link} key={index} className="feature-card">
+              <div className="exhibit-card">
+                <div className="exhibit-front">
+                  <h3 className="feature-title">{exhibit.title}</h3>
+                  <p className="feature-description">{exhibit.description}</p>
+                </div>
+                <div className="exhibit-back">
+                  <div className="exhibit-image-container">
+                    <img
+                      src={exhibit.image}
+                      alt={exhibit.title}
+                      className="exhibit-image"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-      <div className="explore-more">
-        <h2>Embark on a Journey of Discovery</h2>
-        <p>Uncover the mysteries of the universe, one exhibit at a time.</p>
+            </Link>
+          ))}
+        </div>
+        <div className="explore-more">
+          <h2>Embark on a Journey of Discovery</h2>
+          <p>Uncover the mysteries of the universe, one exhibit at a time.</p>
+        </div>
       </div>
     </div>
   );
