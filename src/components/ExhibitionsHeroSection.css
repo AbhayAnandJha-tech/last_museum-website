@@ -1,0 +1,37 @@
+.exhibitions-hero-section {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.exhibitions-hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(0.6);
+}
+
+.exhibitions-hero-content {
+  color: white;
+  text-align: center;
+  z-index: 1;
+  font-family: "Merriweather", serif;
+}
+
+.exhibitions-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.exhibitions-hero-content p {
+  font-size: 1.2rem;
+}

@@ -1,0 +1,29 @@
+.contact-hero-section {
+  height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Lato", sans-serif;
+}
+
+.contact-hero-bg {
+  filter: brightness(0.7);
+}
+
+.contact-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: "Merriweather", serif;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-hero-subtitle {
+  font-size: 1.2rem;
+  color: #ddd;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
