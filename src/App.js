@@ -39,7 +39,7 @@ function App() {
       <CssBaseline />
       <Router>
         <Navbar />
-        <HeroSection />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About content={aboutContent} />} />

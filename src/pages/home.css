@@ -4,11 +4,7 @@
   padding: 60px 20px;
   text-align: center;
   min-height: calc(100vh - 150px);
-  background: linear-gradient(
-    to bottom,
-    #e3f2fd,
-    #ffffff
-  ); /* Subtle gradient */
+  background: linear-gradient(to bottom, #e3f2fd, #ffffff);
 }
 
 .home-title {
@@ -38,7 +34,7 @@
 }
 
 .feature-card:hover {
-  transform: translateY(-10px); /* Subtle lift on hover */
+  transform: translateY(-10px);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -122,7 +118,7 @@
 }
 
 .explore-more:hover {
-  background-color: #e1f5fe; /* Lighten background on hover */
+  background-color: #e1f5fe;
 }
 
 .explore-more h2 {

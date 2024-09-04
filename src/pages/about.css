@@ -1,16 +1,15 @@
-/* General Styles */
 .about-container {
   padding: 60px 40px;
   font-family: "Lato", sans-serif;
   line-height: 1.8;
-  color: #2c3e50; /* Darker gray for better contrast */
-  background: #f4f7fb; /* Light background for modern look */
+  color: #2c3e50;
+  background: #f4f7fb;
   border-radius: 15px;
   max-width: 1200px;
   margin: 60px auto;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
   border: 1px solid #e1e4e8;
-  overflow: hidden; /* Keeps the container neat */
+  overflow: hidden;
 }
 
 /* Header Section */
@@ -25,12 +24,12 @@
   font-family: "Merriweather", serif;
   font-weight: 700;
   text-shadow: 1px 1px 8px rgba(0, 75, 108, 0.2);
-  margin-bottom: 15px; /* Adds spacing between title and intro */
+  margin-bottom: 15px;
 }
 
 .about-header .about-intro {
   font-size: 1.3rem;
-  color: #4a4a4a; /* Slightly lighter gray for readability */
+  color: #4a4a4a;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.7;

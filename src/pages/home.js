@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
+import HeroSection from "../components/HeroSection";
 
 const exhibits = [
   {
@@ -29,6 +30,7 @@ const exhibits = [
 function Home() {
   return (
     <div className="home-container">
+      <HeroSection />
       <h1 className="home-title">
         Discover the Wonders of Science and Technology
       </h1>

@@ -1,6 +1,13 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button, Link } from "@material-ui/core";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Link as MuiLink,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -75,28 +82,33 @@ function Navbar() {
         <Typography
           variant="h6"
           className={classes.logo}
-          component={Link}
-          href="/"
+          component={Link} // Use Link for routing
+          to="/"
         >
           Science Museum
         </Typography>
         <div className={classes.navLinks}>
-          <Link href="/about" className={classes.link}>
+          <MuiLink component={Link} to="/about" className={classes.link}>
             About
-          </Link>
-          <Link href="/explore" className={classes.link}>
+          </MuiLink>
+          <MuiLink component={Link} to="/explore" className={classes.link}>
             Explore
-          </Link>
-          <Link href="/exhibitions" className={classes.link}>
+          </MuiLink>
+          <MuiLink component={Link} to="/exhibitions" className={classes.link}>
             Exhibitions
-          </Link>
-          <Link href="/visit" className={classes.link}>
+          </MuiLink>
+          <MuiLink component={Link} to="/visit" className={classes.link}>
             Visit
-          </Link>
-          <Link href="/contact" className={classes.link}>
+          </MuiLink>
+          <MuiLink component={Link} to="/contact" className={classes.link}>
             Contact
-          </Link>
-          <Button variant="contained" className={classes.button}>
+          </MuiLink>
+          <Button
+            variant="contained"
+            className={classes.button}
+            component={Link}
+            to="/tickets"
+          >
             Get Tickets
           </Button>
         </div>
