@@ -1,42 +1,51 @@
+/* Container and Layout */
 .interactive-exhibits-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
 }
 
+/* Title Styling */
 .interactive-exhibits-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   text-align: center;
   margin-bottom: 20px;
-  font-family: "Arial", sans-serif; /* Adjust font as needed */
+  font-family: "Roboto", sans-serif;
+  color: #1a237e;
+  font-weight: 700;
 }
 
+/* Description Styling */
 .interactive-exhibits-description {
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 40px;
-  color: #666;
-  font-family: "Arial", sans-serif; /* Adjust font as needed */
+  color: #4a5568;
+  font-family: "Roboto", sans-serif;
 }
 
+/* Grid Layout */
 .interactive-exhibits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
+/* Card and Hover Effects */
 .interactive-exhibit-card {
   position: relative;
   width: 100%;
-  height: 400px; /* Adjust height as needed */
+  height: 400px;
   perspective: 1000px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .interactive-exhibit-card-inner {
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s;
+  transition: transform 0.8s ease;
   transform-style: preserve-3d;
 }
 
@@ -52,20 +61,23 @@
   backface-visibility: hidden;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Front Face Styling */
 .interactive-exhibit-front {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 20px;
+  border: 2px solid #cfd8dc;
 }
 
 .interactive-exhibit-back {
-  background-color: #004d40; /* Dark teal for back face */
+  background-color: #004d40;
   color: white;
   transform: rotateY(180deg);
   padding: 20px;
@@ -75,26 +87,30 @@
   align-items: center;
 }
 
+/* Image and Text Styling */
 .interactive-exhibit-image {
   width: 100%;
-  height: 200px; /* Adjust height as needed */
+  height: 200px;
   object-fit: cover;
-  border-bottom: 2px solid #ddd; /* Optional: Add a border for separation */
+  border-bottom: 2px solid #ddd;
 }
 
 .interactive-exhibit-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin: 15px 0;
-  font-family: "Arial", sans-serif; /* Adjust font as needed */
+  font-family: "Roboto", sans-serif;
+  color: #2c3e50;
+  font-weight: 600;
 }
 
 .interactive-exhibit-description {
   font-size: 1rem;
   margin: 0;
-  color: #666;
-  font-family: "Arial", sans-serif; /* Adjust font as needed */
+  color: #7f8c8d;
+  font-family: "Roboto", sans-serif;
 }
 
+/* Back Face Text Styling */
 .interactive-exhibit-back-title {
   font-size: 1.5rem;
   margin-bottom: 10px;
@@ -103,4 +119,20 @@
 .interactive-exhibit-back-description {
   font-size: 1rem;
   text-align: center;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .interactive-exhibits-title {
+    font-size: 2rem;
+  }
+
+  .interactive-exhibits-description {
+    font-size: 1rem;
+  }
+
+  .interactive-exhibit-card {
+    height: 350px;
+  }
 }

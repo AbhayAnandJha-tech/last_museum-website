@@ -1,11 +1,10 @@
 import React from "react";
 import { Typography, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 import "./HeroSection.css";
 import heroBg from "../assets/bgvideo/heroBg.mp4";
 
-// Define animation variants
 const textVariant = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0 },
@@ -18,32 +17,29 @@ const buttonVariant = {
 
 function HeroSection() {
   return (
-    <div className="hero-section relative h-screen flex items-center justify-center">
+    <div className="hero-section">
       {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+      <div className="video-container">
         <video
           autoPlay
           muted
           loop
           src={heroBg}
           type="video/mp4"
-          className="w-full h-full object-cover"
+          className="video-bg"
         />
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="hero-overlay"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white">
+      <div className="hero-content">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={textVariant}
-          transition={{ duration: 1, delay: 0.5 }} // Adjust the timing as needed
+          transition={{ duration: 1, delay: 0.5 }}
         >
-          <Typography
-            variant="h2"
-            className="hero-title text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
-          >
+          <Typography variant="h2" className="hero-title">
             Welcome to the Science Museum
           </Typography>
         </motion.div>
@@ -52,12 +48,9 @@ function HeroSection() {
           initial="hidden"
           animate="visible"
           variants={textVariant}
-          transition={{ duration: 1, delay: 0.8 }} // Slightly delay for subtitle
+          transition={{ duration: 1, delay: 0.8 }}
         >
-          <Typography
-            variant="h5"
-            className="hero-subtitle text-lg sm:text-xl md:text-2xl mb-8"
-          >
+          <Typography variant="h5" className="hero-subtitle">
             Explore the intersection of science, technology, and creativity.
           </Typography>
         </motion.div>
@@ -66,22 +59,16 @@ function HeroSection() {
           initial="hidden"
           animate="visible"
           variants={buttonVariant}
-          transition={{ duration: 1, delay: 1.2 }} // Delay for buttons
-          className="flex flex-col sm:flex-row justify-center gap-4"
+          transition={{ duration: 1, delay: 1.2 }}
+          className="hero-buttons"
         >
           <Link to="/explore" className="hero-link">
-            <Button
-              variant="contained"
-              className="hero-button bg-blue-600 text-white hover:bg-blue-500"
-            >
+            <Button variant="contained" className="hero-button">
               Explore Now
             </Button>
           </Link>
           <Link to="/learn-more" className="hero-link">
-            <Button
-              variant="outlined"
-              className="hero-secondary-button border-white text-white hover:bg-white hover:text-black"
-            >
+            <Button variant="outlined" className="hero-secondary-button">
               Learn More
             </Button>
           </Link>

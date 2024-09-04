@@ -1,19 +1,22 @@
+/* General Styles */
 .about-container {
-  padding: 40px;
+  padding: 60px 40px;
   font-family: "Lato", sans-serif;
   line-height: 1.8;
-  color: #333;
-  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  color: #2c3e50; /* Darker gray for better contrast */
+  background: #f4f7fb; /* Light background for modern look */
   border-radius: 15px;
   max-width: 1200px;
-  margin: 40px auto;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
+  margin: 60px auto;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
+  border: 1px solid #e1e4e8;
+  overflow: hidden; /* Keeps the container neat */
 }
 
+/* Header Section */
 .about-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .about-header h1 {
@@ -21,76 +24,142 @@
   color: #004b6c;
   font-family: "Merriweather", serif;
   font-weight: 700;
+  text-shadow: 1px 1px 8px rgba(0, 75, 108, 0.2);
+  margin-bottom: 15px; /* Adds spacing between title and intro */
 }
 
 .about-header .about-intro {
-  font-size: 1.2rem;
-  color: #666;
+  font-size: 1.3rem;
+  color: #4a4a4a; /* Slightly lighter gray for readability */
   max-width: 800px;
   margin: 0 auto;
+  line-height: 1.7;
 }
 
+/* About Content Section */
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
+/* About Section with Image */
 .about-section {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #004b6c;
 }
 
-.about-image {
-  max-width: 40%;
-  border-radius: 10px;
+.about-section img {
+  max-width: 35%;
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
+.about-section img:hover {
+  transform: scale(1.05);
+}
+
+/* Individual Sections */
 .about-timings,
 .about-getting-here,
 .about-why-visit,
 .about-contact,
 .about-social-media {
   background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 20px 25px;
+  border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   border-left: 5px solid #004b6c;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
+/* Section Headers */
 .about-timings h2,
 .about-getting-here h2,
 .about-why-visit h2,
 .about-contact h2,
 .about-social-media h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: #004b6c;
   margin-bottom: 10px;
+  font-family: "Merriweather", serif;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Links Styling */
 .about-contact a,
 .about-social-media a {
   color: #004b6c;
   text-decoration: none;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .about-contact a:hover,
 .about-social-media a:hover {
   text-decoration: underline;
+  color: #1e90ff;
 }
 
+/* Quote Section */
 .about-quote {
   border-left: 4px solid #004b6c;
   padding-left: 20px;
-  margin: 20px 0;
+  margin: 30px 0;
   font-style: italic;
-  color: #666;
+  color: #4a4a4a;
   background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 15px 20px;
+  border-radius: 10px;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-section img {
+    max-width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .about-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-header .about-intro {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-header .about-intro {
+    font-size: 1rem;
+  }
+
+  .about-timings h2,
+  .about-getting-here h2,
+  .about-why-visit h2,
+  .about-contact h2,
+  .about-social-media h2 {
+    font-size: 1.4rem;
+  }
 }
