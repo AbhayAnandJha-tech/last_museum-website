@@ -9,8 +9,8 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import MinimizeIcon from "@material-ui/icons/Remove";
-import ScienceIcon from "@material-ui/icons/EmojiObjects"; // For minimized state icon
-import PersonIcon from "@material-ui/icons/Person"; // Scientist icon
+import ScienceIcon from "@material-ui/icons/EmojiObjects";
+import PersonIcon from "@material-ui/icons/Person";
 
 const useStyles = makeStyles((theme) => ({
   chatbotContainer: {
@@ -20,13 +20,15 @@ const useStyles = makeStyles((theme) => ({
     width: 350,
     padding: 20,
     borderRadius: 15,
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-    backgroundColor: "#ffffff",
+    boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)",
+    background: "linear-gradient(135deg, #f0f4ff, #ffffff)",
+    color: "#333",
     [theme.breakpoints.down("xs")]: {
       width: "90%",
       bottom: 10,
       right: 10,
     },
+    zIndex: 1000,
   },
   minimizedChatbot: {
     position: "fixed",
@@ -39,40 +41,46 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-    backgroundColor: "#1976d2",
+    backgroundColor: "#0d6efd",
     color: "#fff",
     cursor: "pointer",
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    "&:hover": {
+      transform: "scale(1.05)",
+      boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
+    },
     [theme.breakpoints.down("xs")]: {
       bottom: 10,
       right: 10,
     },
   },
   chatHeader: {
-    textAlign: "center",
-    marginBottom: 15,
-    color: "#1976d2",
-    fontWeight: "bold",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    background: "linear-gradient(to right, #1976d2, #42a5f5)",
-    padding: "5px 10px",
+    background: "linear-gradient(45deg, #0d6efd, #6610f2)",
+    padding: "10px 15px",
     borderRadius: "10px",
+    color: "#ffffff",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    fontFamily: "'Merriweather', serif",
+    fontWeight: 700,
   },
   headerText: {
     display: "flex",
     alignItems: "center",
     fontWeight: 600,
     fontSize: "1.1rem",
+    fontFamily: "'Roboto', sans-serif",
   },
   chatArea: {
     height: 300,
     overflowY: "auto",
     marginBottom: 20,
     padding: "10px 0",
-    borderTop: "1px solid #e0e0e0",
-    borderBottom: "1px solid #e0e0e0",
+    backgroundColor: "#f8f9fa",
+    borderRadius: "10px",
+    boxShadow: "inset 0 1px 3px rgba(0, 0, 0, 0.1)",
   },
   messageContainer: {
     display: "flex",
@@ -81,22 +89,24 @@ const useStyles = makeStyles((theme) => ({
   },
   userMessage: {
     alignSelf: "flex-end",
-    backgroundColor: "#e3f2fd",
-    color: "#333",
+    backgroundColor: "#e0f7fa",
+    color: "#007bff",
     padding: 10,
-    borderRadius: 10,
+    borderRadius: 12,
     margin: 5,
     maxWidth: "80%",
-    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
+    fontFamily: "'Roboto', sans-serif",
   },
   botMessage: {
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#f1f1f1",
     color: "#333",
     padding: 10,
-    borderRadius: 10,
+    borderRadius: 12,
     margin: 5,
     maxWidth: "80%",
-    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
+    fontFamily: "'Roboto', sans-serif",
   },
   inputArea: {
     display: "flex",
@@ -105,10 +115,21 @@ const useStyles = makeStyles((theme) => ({
   inputField: {
     flexGrow: 1,
     marginRight: theme.spacing(1),
+    backgroundColor: "#e9ecef",
+    borderRadius: 8,
+    border: "none",
+    outline: "none",
+    padding: 10,
+    "&:focus": {
+      border: "1px solid #0d6efd",
+      backgroundColor: "#fff",
+    },
   },
   sendButton: {
-    backgroundColor: "#1976d2",
+    backgroundColor: "#0d6efd",
     color: "#fff",
+    borderRadius: 8,
+    fontWeight: 600,
     "&:hover": {
       backgroundColor: "#155fa0",
     },
@@ -117,24 +138,27 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     fontStyle: "italic",
-    color: "#888",
+    color: "#6c757d",
     padding: 10,
   },
 }));
 
 function Chatbot() {
   const classes = useStyles();
+
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isBotTyping, setIsBotTyping] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
 
+  // Function to handle sending a message
   const handleSend = () => {
     if (input.trim()) {
       setMessages([...messages, { text: input, user: true }]);
       setInput("");
       setIsBotTyping(true);
 
+      // Simulate bot response
       setTimeout(() => {
         setIsBotTyping(false);
         const botResponses = [
@@ -157,21 +181,20 @@ function Chatbot() {
     }
   };
 
+  // Toggle the minimized state of the chatbot
   const toggleMinimize = () => {
     setIsMinimized(!isMinimized);
   };
 
   return isMinimized ? (
     <div className={classes.minimizedChatbot} onClick={toggleMinimize}>
-      <ScienceIcon style={{ fontSize: 40 }} />{" "}
+      <ScienceIcon style={{ fontSize: 40 }} />
     </div>
   ) : (
     <Paper className={classes.chatbotContainer}>
       <div className={classes.chatHeader}>
         <Typography className={classes.headerText}>
-          <PersonIcon style={{ marginRight: 8 }} />{" "}
-          {/* Scientist cartoon icon */}
-          Chat with us
+          <PersonIcon style={{ marginRight: 8 }} /> Chat with us
         </Typography>
         <IconButton onClick={toggleMinimize} size="small">
           <MinimizeIcon />

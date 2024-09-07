@@ -5,6 +5,7 @@ import exhibitionsHeroImage from "../assets/bgimage/exhibitons.jpg";
 const ExhibitionsHeroSection = () => {
   return (
     <div className="exhibitions-hero-section">
+      <div className="exhibitions-hero-overlay"></div>
       <img
         src={exhibitionsHeroImage}
         alt="Exhibitions Section Hero"
@@ -12,7 +13,9 @@ const ExhibitionsHeroSection = () => {
       />
       <div className="exhibitions-hero-content">
         <h1>Exhibitions</h1>
-        <p>Explore our captivating exhibitions that bring science to life.</p>
+        <p>
+          Immerse yourself in our engaging exhibitions that inspire and educate.
+        </p>
       </div>
     </div>
   );

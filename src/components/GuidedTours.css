@@ -2,7 +2,7 @@
   padding: 40px 20px;
   background-color: #f4f4f4;
   color: #333;
-  max-width: 1200px; /* Ensures balanced content width */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -26,18 +26,15 @@
 
 .guided-tours-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(350px, 1fr)
-  ); /* Adequate box size */
-  gap: 30px; /* Proper spacing between cards */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
 }
 
 .guided-tour-card {
   position: relative;
   width: 100%;
-  height: 500px; /* Increased height for clear visibility */
-  perspective: 1000px; /* Allows the card to be viewed in 3D space */
+  height: 500px;
+  perspective: 1000px;
 }
 
 .guided-tour-inner {
@@ -49,7 +46,7 @@
 }
 
 .guided-tour-card:hover .guided-tour-inner {
-  transform: rotateY(180deg); /* Flips the card */
+  transform: rotateY(180deg);
 }
 
 .guided-tour-front,
@@ -76,10 +73,10 @@
 
 .guided-tour-image {
   width: 100%;
-  height: 60%; /* Occupies 60% of the card height */
-  object-fit: cover; /* Ensures full coverage without leaving space */
+  height: 60%;
+  object-fit: cover;
   display: block;
-  margin: 0; /* Removes space above the image */
+  margin: 0;
 }
 
 .guided-tour-title {
@@ -87,7 +84,7 @@
   margin: 10px 20px;
   font-weight: bold;
   color: #333;
-  text-align: center; /* Centers the title */
+  text-align: center;
 }
 
 .guided-tour-description {
@@ -98,22 +95,22 @@
 }
 
 .guided-tour-back {
-  background: #4a90e2; /* Yellow color for the back side */
+  background: #4a90e2;
   color: white;
-  transform: rotateY(180deg); /* Hide the back side initially */
+  transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px; /* Added padding for spacing */
+  padding: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .guided-tour-back-title {
-  font-size: 2rem; /* Larger font size for heading */
+  font-size: 2rem;
   font-weight: bold;
   color: white;
-  margin-bottom: 20px; /* Space below the heading */
+  margin-bottom: 20px;
 }
 
 .guided-tour-back-description {
@@ -121,5 +118,5 @@
   line-height: 1.6;
   color: white;
   text-align: center;
-  max-width: 600px; /* Controls the width of text */
+  max-width: 600px;
 }

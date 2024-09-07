@@ -7,31 +7,73 @@
   overflow: hidden;
   border-radius: 15px;
   margin: 20px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: url("../assets/bgimage/exhibitons.jpg") center/cover no-repeat;
+}
+
+.exhibitions-hero-section:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .exhibitions-hero-bg {
   width: 100%;
-  height: 100%;
+  height: 110%;
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  filter: brightness(0.6);
+  filter: brightness(0.4) contrast(1.3);
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.exhibitions-hero-section:hover .exhibitions-hero-bg {
+  transform: scale(1.05);
+  filter: brightness(0.5) contrast(1.5);
+}
+
+.exhibitions-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
 }
 
 .exhibitions-hero-content {
-  color: white;
+  color: #f4f4f9;
   text-align: center;
   z-index: 1;
   font-family: "Merriweather", serif;
+  padding: 20px;
+  max-width: 800px;
+  animation: fadeIn 1.2s ease-in-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .exhibitions-hero-content h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 10px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
 }
 
 .exhibitions-hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

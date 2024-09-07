@@ -9,18 +9,18 @@
 }
 
 .about-hero-bg {
-  filter: brightness(0.5); /* Darkens the background image */
+  filter: brightness(0.5);
 }
 
 .about-hero-content {
   max-width: 800px;
   color: #ffffff;
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6); /* Makes text more readable */
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
 }
 
 .about-hero-title {
   font-family: "Merriweather", serif;
-  font-size: 3.5rem; /* Adjust size based on screen */
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -29,7 +29,7 @@
 
 .about-hero-subtitle {
   font-family: "Lato", sans-serif;
-  font-size: 1.25rem; /* Adjust size based on screen */
+  font-size: 1.25rem;
   line-height: 1.7;
   font-weight: 300;
   max-width: 90%;

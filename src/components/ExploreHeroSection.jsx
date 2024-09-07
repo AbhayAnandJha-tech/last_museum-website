@@ -10,11 +10,12 @@ const ExploreHeroSection = () => {
         alt="Explore Section Hero"
         className="explore-hero-bg"
       />
+      <div className="explore-hero-overlay"></div>
       <div className="explore-hero-content">
-        <h1>Explore</h1>
+        <h1>Explore the Unseen</h1>
         <p>
-          Discover the wonders of science through hands-on exhibits and
-          interactive displays.
+          Dive into a world of discovery. From the mysteries of the cosmos to
+          the marvels of modern science, your adventure starts here.
         </p>
       </div>
     </div>

@@ -2,7 +2,7 @@
   padding: 40px 20px;
   background-color: #f4f4f4;
   color: #333;
-  max-width: 1200px; /* Ensures balanced content width */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -26,17 +26,14 @@
 
 .educational-workshops-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(350px, 1fr)
-  ); /* Adequate box size */
-  gap: 30px; /* Proper spacing between cards */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
 }
 
 .educational-workshop-card {
   perspective: 1000px;
   transition: transform 0.3s ease;
-  min-height: 500px; /* Further increased height for full content visibility */
+  min-height: 500px;
 }
 
 .educational-workshop-inner {
@@ -74,7 +71,7 @@
 }
 
 .educational-workshop-back {
-  background: #4a90e2; /* Soft blue color for readability */
+  background: #4a90e2;
   color: white;
   transform: rotateY(180deg);
   padding: 20px;
@@ -83,9 +80,9 @@
 
 .educational-workshop-image {
   width: 100%;
-  height: 60%; /* Occupies 60% of the card height */
-  object-fit: cover; /* Ensures full coverage without leaving space */
-  flex-shrink: 0; /* Prevents the image from shrinking */
+  height: 60%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .educational-workshop-title {
@@ -103,5 +100,5 @@
 .educational-workshop-flip-description {
   text-align: left;
   padding: 10px 20px;
-  color: #f0f0f0; /* Ensuring good contrast and readability */
+  color: #f0f0f0;
 }
