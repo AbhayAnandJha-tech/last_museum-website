@@ -1,61 +1,54 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+/* Tickets.css */
+.tickets-page {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
   color: #333;
-  background-color: #f0f0f5;
 }
 
-.tickets-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  margin: 2rem auto;
-  width: 90%;
-  max-width: 800px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
+  text-align: center;
   font-size: 2.5rem;
-  color: #00274d;
-  margin-bottom: 0.5rem;
-}
-
-h2 {
-  font-size: 1.75rem;
-  color: #0057a8;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 20px;
+  color: #004a8d;
 }
 
 p {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  text-align: center;
   font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #555;
 }
 
 .styled-table {
+  width: 100%;
   border-collapse: collapse;
   margin: 25px 0;
-  font-size: 1rem;
-  width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.styled-table thead tr {
-  background-color: #0057a8;
-  color: #ffffff;
-  text-align: left;
+  font-size: 0.9em;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;
-  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.styled-table thead tr {
+  background-color: #004a8d;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
 }
 
 .styled-table tbody tr {
@@ -67,88 +60,95 @@ p {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #0057a8;
+  border-bottom: 2px solid #004a8d;
 }
 
 .form-group {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-label {
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  color: #004a8d;
 }
 
-input,
-select {
+.form-group input,
+.form-group select {
+  width: 100%;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
   font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
 }
 
-input:focus,
-select:focus {
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #004a8d;
   outline: none;
-  border-color: #0057a8;
 }
 
-.grand-total {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #d32f2f;
-  margin-bottom: 1rem;
+.form-group.inline {
+  display: flex;
+  align-items: center;
 }
 
-.qr-code-placeholder {
-  text-align: center;
-  padding: 20px;
-  border: 2px dashed #0057a8;
-  border-radius: 10px;
-  margin: 1rem 0;
-  color: #0057a8;
-  font-weight: bold;
+.form-group.inline input {
+  margin-right: 10px;
 }
 
-.submit-button {
-  background-color: #0057a8;
-  color: #ffffff;
-  padding: 10px 20px;
+.form-group.inline a {
+  color: #004a8d;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.form-group.inline a:hover {
+  color: #002b5c;
+}
+
+.calculate-btn {
+  display: inline-block;
+  background-color: #004a8d;
+  color: #fff;
   border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
-  background-color: #003f7a;
+.calculate-btn:hover {
+  background-color: #003366;
 }
 
-.submit-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+#grand-total {
+  font-size: 1.2rem;
+  color: #d9534f;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.terms {
-  display: flex;
-  align-items: center;
-  font-size: 0.9rem;
+.submit-btn {
+  display: block;
+  width: 100%;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 15px 0;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.terms a {
-  color: #0057a8;
-  text-decoration: none;
-  margin-left: 5px;
+.submit-btn:disabled {
+  background-color: #6c757d;
 }
 
-.terms a:hover {
-  text-decoration: underline;
-}
-
-.inline {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
+.submit-btn:hover:enabled {
+  background-color: #218838;
 }

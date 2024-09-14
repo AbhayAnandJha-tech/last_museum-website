@@ -23,7 +23,7 @@ const About = () => {
           <div className="about-content">
             <section className="about-section">
               <img
-                src="aboutLogoo"
+                src={aboutlogoo}
                 alt="Science Centre"
                 className="about-image"
               />
